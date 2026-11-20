@@ -1,0 +1,13 @@
+{
+  "name": "Muse Restaurant",
+  "short_name": "Muse",
+  "description": "Fine dining in Walmer, Gqeberha.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#171816",
+  "theme_color": "#171816",
+  "icons": [
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

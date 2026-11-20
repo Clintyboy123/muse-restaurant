@@ -1,0 +1,25 @@
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Dependencies and builds
+node_modules/
+dist/
+release/
+
+# Local data
+uploads/
+backups/
+*.sql
+*.sql.gz
+
+# System and editor files
+.DS_Store
+npm-debug.log*
+.vscode/
+.idea/
+
+# Licensed music masters (WAV): large, and licensed source files stay out of the repository.
+# Originals are on the Zet drive (Muse Website folder); the site uses the encoded copies in frontend/public/music.
+assets-source/music/

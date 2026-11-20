@@ -1,0 +1,587 @@
+{
+  "hero": {
+    "file": "hero",
+    "width": 1501,
+    "height": 1000,
+    "alt": "Thinly sliced seared beef with capers, vegetable crisps and edible flowers on a stoneware plate",
+    "category": "food",
+    "tone": "#5c5348",
+    "large": true
+  },
+  "palette": {
+    "file": "palette",
+    "width": 1777,
+    "height": 1000,
+    "alt": "Six plated dishes arranged in a circle on polished concrete, seen from above",
+    "category": "food",
+    "tone": "#77776c",
+    "large": true
+  },
+  "palette-wide": {
+    "file": "palette-wide",
+    "width": 1000,
+    "height": 1000,
+    "alt": "Seven plates of food arranged on a concrete surface, seen from above",
+    "category": "food",
+    "tone": "#bab3ae",
+    "large": true
+  },
+  "plate-moon": {
+    "file": "plate-moon",
+    "width": 666,
+    "height": 1000,
+    "alt": "A dessert with berries, cream and violet flowers on a half-moon plate",
+    "category": "food",
+    "tone": "#525053",
+    "large": false
+  },
+  "plate-dark": {
+    "file": "plate-dark",
+    "width": 666,
+    "height": 1000,
+    "alt": "A glazed main course with orange pur\u00e9e dots on a black plate",
+    "category": "food",
+    "tone": "#534d49",
+    "large": false
+  },
+  "plate-tin": {
+    "file": "plate-tin",
+    "width": 666,
+    "height": 1000,
+    "alt": "A starter served in a small tin on a slice of timber",
+    "category": "food",
+    "tone": "#6c6463",
+    "large": false
+  },
+  "plate-green": {
+    "file": "plate-green",
+    "width": 977,
+    "height": 1000,
+    "alt": "Crumbed croquettes, chips in a paper cone and garnishes on a green plate",
+    "category": "food",
+    "tone": "#8b8171",
+    "large": true
+  },
+  "table-evening": {
+    "file": "table-evening",
+    "width": 1500,
+    "height": 1000,
+    "alt": "A guest at an evening table with a plated starter and a cocktail",
+    "category": "restaurant",
+    "tone": "#63432b",
+    "large": true
+  },
+  "plate-colour": {
+    "file": "plate-colour",
+    "width": 750,
+    "height": 1000,
+    "alt": "A colourful plated dish with flowers and herbs on a black plate",
+    "category": "food",
+    "tone": "#7d6f5c",
+    "large": false
+  },
+  "plate-carpaccio": {
+    "file": "plate-carpaccio",
+    "width": 750,
+    "height": 1000,
+    "alt": "Carpaccio scattered with flowers, herbs and shavings on a black plate",
+    "category": "food",
+    "tone": "#887d78",
+    "large": false
+  },
+  "fillet": {
+    "file": "fillet",
+    "width": 900,
+    "height": 600,
+    "alt": "A tall cut of beef with pork belly, baby marrow and a swipe of sauce",
+    "category": "food",
+    "tone": "#958477",
+    "large": true
+  },
+  "carpaccio-white": {
+    "file": "carpaccio-white",
+    "width": 900,
+    "height": 600,
+    "alt": "Beef carpaccio with a red tuile on a white plate",
+    "category": "food",
+    "tone": "#bea89a",
+    "large": true
+  },
+  "tian": {
+    "file": "tian",
+    "width": 900,
+    "height": 607,
+    "alt": "A potato tian topped with greens and crisp crackling",
+    "category": "food",
+    "tone": "#aca172",
+    "large": true
+  },
+  "pork-belly": {
+    "file": "pork-belly",
+    "width": 900,
+    "height": 640,
+    "alt": "Glazed pork belly with crackling, butternut and roasted squash",
+    "category": "food",
+    "tone": "#947643",
+    "large": true
+  },
+  "bone-marrow": {
+    "file": "bone-marrow",
+    "width": 900,
+    "height": 583,
+    "alt": "Roasted bone marrow with bread and pulled beef in a white bowl",
+    "category": "food",
+    "tone": "#a8a299",
+    "large": true
+  },
+  "dessert-sphere": {
+    "file": "dessert-sphere",
+    "width": 900,
+    "height": 600,
+    "alt": "A dark chocolate dessert with ice cream and a spun sugar garnish",
+    "category": "food",
+    "tone": "#a3a1a0",
+    "large": true
+  },
+  "dessert-ice": {
+    "file": "dessert-ice",
+    "width": 900,
+    "height": 579,
+    "alt": "An ice cream lolly with nougat and cream on a dark slate",
+    "category": "food",
+    "tone": "#4b4240",
+    "large": true
+  },
+  "dessert-black": {
+    "file": "dessert-black",
+    "width": 900,
+    "height": 600,
+    "alt": "A plated dessert with meringue and citrus on a black dish",
+    "category": "food",
+    "tone": "#83807a",
+    "large": true
+  },
+  "interior": {
+    "file": "interior",
+    "width": 1440,
+    "height": 1440,
+    "alt": "The Muse dining room: brick arches, the Muse sign, pendant lights and set tables",
+    "category": "restaurant",
+    "tone": "#545050",
+    "large": true
+  },
+  "exterior": {
+    "file": "exterior",
+    "width": 1000,
+    "height": 1000,
+    "alt": "Muse Restaurant on Main Road, Walmer, lit up at night",
+    "category": "restaurant",
+    "tone": "#393e4a",
+    "large": true
+  },
+  "sign": {
+    "file": "sign",
+    "width": 750,
+    "height": 1000,
+    "alt": "The illuminated Muse sign at the entrance at night",
+    "category": "restaurant",
+    "tone": "#59554a",
+    "large": false
+  },
+  "date-night": {
+    "file": "date-night",
+    "width": 685,
+    "height": 1000,
+    "alt": "Wine, a menu and a starter on a dinner table",
+    "category": "restaurant",
+    "tone": "#7f6758",
+    "large": false
+  },
+  "table-set": {
+    "file": "table-set",
+    "width": 750,
+    "height": 1000,
+    "alt": "A long set table with glassware along the dining room",
+    "category": "restaurant",
+    "tone": "#755d45",
+    "large": false
+  },
+  "bread-stones": {
+    "file": "bread-stones",
+    "width": 1333,
+    "height": 1000,
+    "alt": "Bread rolls served among river stones, with white and ros\u00e9 wine",
+    "category": "food",
+    "tone": "#8e735c",
+    "large": true
+  },
+  "wine-table": {
+    "file": "wine-table",
+    "width": 750,
+    "height": 1000,
+    "alt": "Bottles of wine and glasses on a wooden table against brick",
+    "category": "restaurant",
+    "tone": "#65544c",
+    "large": false
+  },
+  "wine-wall": {
+    "file": "wine-wall",
+    "width": 750,
+    "height": 1000,
+    "alt": "The wine wall at Muse",
+    "category": "restaurant",
+    "tone": "#4e433c",
+    "large": false
+  },
+  "art-wall": {
+    "file": "art-wall",
+    "width": 667,
+    "height": 500,
+    "alt": "Artworks hanging on the brick wall of the restaurant",
+    "category": "restaurant",
+    "tone": "#6b6962",
+    "large": false
+  },
+  "coffee": {
+    "file": "coffee",
+    "width": 960,
+    "height": 720,
+    "alt": "Coffee, a slice of pastry and Muse blend coffee bags",
+    "category": "restaurant",
+    "tone": "#898689",
+    "large": true
+  },
+  "cakes": {
+    "file": "cakes",
+    "width": 960,
+    "height": 540,
+    "alt": "Layered cakes on cake stands",
+    "category": "events",
+    "tone": "#746f74",
+    "large": true
+  },
+  "chef-plating": {
+    "file": "chef-plating",
+    "width": 500,
+    "height": 500,
+    "alt": "A chef plating a row of dishes on the pass",
+    "category": "chefs",
+    "tone": "#837c76",
+    "large": false
+  },
+  "chef-fish": {
+    "file": "chef-fish",
+    "width": 500,
+    "height": 500,
+    "alt": "A chef in the Muse kitchen holding a fresh fish",
+    "category": "chefs",
+    "tone": "#79736d",
+    "large": false
+  },
+  "chefs-team": {
+    "file": "chefs-team",
+    "width": 580,
+    "height": 500,
+    "alt": "The kitchen team smiling in the Muse kitchen",
+    "category": "chefs",
+    "tone": "#787c6f",
+    "large": false
+  },
+  "chefs-prep": {
+    "file": "chefs-prep",
+    "width": 720,
+    "height": 480,
+    "alt": "Two chefs at work with a stand mixer in the kitchen",
+    "category": "chefs",
+    "tone": "#8f857c",
+    "large": false
+  },
+  "chefs-catch": {
+    "file": "chefs-catch",
+    "width": 541,
+    "height": 700,
+    "alt": "Two chefs holding up a whole fish in the kitchen",
+    "category": "chefs",
+    "tone": "#8590a0",
+    "large": false
+  },
+  "chef-demo": {
+    "file": "chef-demo",
+    "width": 720,
+    "height": 479,
+    "alt": "A chef in Muse whites talking at a cooking demonstration",
+    "category": "chefs",
+    "tone": "#706e68",
+    "large": false
+  },
+  "pasta": {
+    "file": "pasta",
+    "width": 500,
+    "height": 500,
+    "alt": "Hand-cut fresh pasta on a floured board",
+    "category": "kitchen",
+    "tone": "#8c9175",
+    "large": false
+  },
+  "smoke": {
+    "file": "smoke",
+    "width": 623,
+    "height": 500,
+    "alt": "Lifting a glass cloche of smoke off a plate",
+    "category": "kitchen",
+    "tone": "#8f7c6e",
+    "large": false
+  },
+  "pastry-work": {
+    "file": "pastry-work",
+    "width": 700,
+    "height": 460,
+    "alt": "Dessert components laid out on baking paper",
+    "category": "kitchen",
+    "tone": "#b1905e",
+    "large": false
+  },
+  "knives": {
+    "file": "knives",
+    "width": 433,
+    "height": 500,
+    "alt": "A chef's knife roll",
+    "category": "kitchen",
+    "tone": "#4a4a49",
+    "large": false
+  },
+  "filming": {
+    "file": "filming",
+    "width": 667,
+    "height": 500,
+    "alt": "Plating a dish for a camera crew in the kitchen",
+    "category": "kitchen",
+    "tone": "#646356",
+    "large": false
+  },
+  "yellowtail": {
+    "file": "yellowtail",
+    "width": 401,
+    "height": 500,
+    "alt": "A whole fish ready for filleting on a board",
+    "category": "kitchen",
+    "tone": "#bfbfc5",
+    "large": false
+  },
+  "samphire": {
+    "file": "samphire",
+    "width": 667,
+    "height": 500,
+    "alt": "Wild samphire growing in a coastal salt marsh",
+    "category": "kitchen",
+    "tone": "#627138",
+    "large": false
+  },
+  "high-tea": {
+    "file": "high-tea",
+    "width": 720,
+    "height": 480,
+    "alt": "A styled high tea table with cakes, flowers and pastries",
+    "category": "events",
+    "tone": "#ad9585",
+    "large": false
+  },
+  "high-tea-flowers": {
+    "file": "high-tea-flowers",
+    "width": 720,
+    "height": 1080,
+    "alt": "Pastries and flowers on a white cake stand",
+    "category": "events",
+    "tone": "#c9aea6",
+    "large": false
+  },
+  "bubbles": {
+    "file": "bubbles",
+    "width": 720,
+    "height": 1080,
+    "alt": "Pouring ros\u00e9 bubbles beside an ice bucket of strawberries",
+    "category": "events",
+    "tone": "#c3b1a8",
+    "large": false
+  },
+  "wedding-cake": {
+    "file": "wedding-cake",
+    "width": 720,
+    "height": 1202,
+    "alt": "A tiered white wedding cake with lace and brooch details",
+    "category": "events",
+    "tone": "#9d9c90",
+    "large": false
+  },
+  "doughnut-tower": {
+    "file": "doughnut-tower",
+    "width": 720,
+    "height": 1080,
+    "alt": "A tower of doughnuts decorated with flowers",
+    "category": "events",
+    "tone": "#cdb3a4",
+    "large": false
+  },
+  "naked-cake": {
+    "file": "naked-cake",
+    "width": 720,
+    "height": 480,
+    "alt": "A chocolate cake crowned with roses at a celebration table",
+    "category": "events",
+    "tone": "#bdadaa",
+    "large": false
+  },
+  "slices": {
+    "file": "slices",
+    "width": 720,
+    "height": 480,
+    "alt": "Custard slices on a wooden board with pink flowers",
+    "category": "events",
+    "tone": "#bb9c90",
+    "large": false
+  },
+  "champagne": {
+    "file": "champagne",
+    "width": 720,
+    "height": 480,
+    "alt": "Bottles of ros\u00e9 on ice in a silver bucket",
+    "category": "events",
+    "tone": "#ae9a95",
+    "large": false
+  },
+  "canape-chips": {
+    "file": "canape-chips",
+    "width": 720,
+    "height": 479,
+    "alt": "Canap\u00e9s of chips with aioli in paper boats",
+    "category": "events",
+    "tone": "#b09975",
+    "large": false
+  },
+  "canape-ribs": {
+    "file": "canape-ribs",
+    "width": 720,
+    "height": 479,
+    "alt": "Sticky rib canap\u00e9s with fries in paper boats",
+    "category": "events",
+    "tone": "#c2ad97",
+    "large": false
+  },
+  "canape-croquette": {
+    "file": "canape-croquette",
+    "width": 720,
+    "height": 479,
+    "alt": "Croquette canap\u00e9s on cocktail sticks",
+    "category": "events",
+    "tone": "#aa906c",
+    "large": false
+  },
+  "dessert-table": {
+    "file": "dessert-table",
+    "width": 667,
+    "height": 500,
+    "alt": "A dessert table under the Muse sign",
+    "category": "events",
+    "tone": "#686358",
+    "large": false
+  },
+  "buffet-long": {
+    "file": "buffet-long",
+    "width": 700,
+    "height": 394,
+    "alt": "A long catered dessert buffet in a glass-walled venue",
+    "category": "events",
+    "tone": "#797874",
+    "large": false
+  },
+  "tartlets": {
+    "file": "tartlets",
+    "width": 500,
+    "height": 500,
+    "alt": "Lemon meringue tartlets with a bouquet of flowers",
+    "category": "events",
+    "tone": "#604c33",
+    "large": false
+  },
+  "panna-cotta": {
+    "file": "panna-cotta",
+    "width": 700,
+    "height": 465,
+    "alt": "Panna cotta with berry jelly in glasses",
+    "category": "events",
+    "tone": "#6b5a54",
+    "large": false
+  },
+  "macarons": {
+    "file": "macarons",
+    "width": 375,
+    "height": 500,
+    "alt": "A tiered stand of colourful macarons",
+    "category": "events",
+    "tone": "#746658",
+    "large": false
+  },
+  "macarons-painted": {
+    "file": "macarons-painted",
+    "width": 375,
+    "height": 500,
+    "alt": "Hand-painted macarons on a glass platter",
+    "category": "events",
+    "tone": "#8c8782",
+    "large": false
+  },
+  "baby-shower": {
+    "file": "baby-shower",
+    "width": 375,
+    "height": 500,
+    "alt": "A baby shower dessert table with balloons and treats",
+    "category": "events",
+    "tone": "#8b7c6f",
+    "large": false
+  },
+  "celebration-table": {
+    "file": "celebration-table",
+    "width": 375,
+    "height": 500,
+    "alt": "A dessert table with cheesecakes and yellow flowers",
+    "category": "events",
+    "tone": "#96927f",
+    "large": false
+  },
+  "drip-cake": {
+    "file": "drip-cake",
+    "width": 375,
+    "height": 500,
+    "alt": "A pink drip cake topped with meringues and chocolate",
+    "category": "events",
+    "tone": "#765f5e",
+    "large": false
+  },
+  "doughnuts": {
+    "file": "doughnuts",
+    "width": 375,
+    "height": 500,
+    "alt": "A glass stand piled with glazed doughnuts",
+    "category": "events",
+    "tone": "#42372b",
+    "large": false
+  },
+  "cupcake-roses": {
+    "file": "cupcake-roses",
+    "width": 700,
+    "height": 365,
+    "alt": "Cupcakes piped as red and yellow roses",
+    "category": "events",
+    "tone": "#84775b",
+    "large": false
+  },
+  "wedding-cake-roses": {
+    "file": "wedding-cake-roses",
+    "width": 477,
+    "height": 700,
+    "alt": "A three-tier buttercream cake with fresh roses",
+    "category": "events",
+    "tone": "#776257",
+    "large": false
+  }
+}

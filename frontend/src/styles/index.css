@@ -1,0 +1,400 @@
+@import "tailwindcss";
+
+/* Fonts, self-hosted (no requests to Google): Cormorant Garamond for headings and statements, Manrope for text. */
+@import "@fontsource/cormorant-garamond/300.css";
+@import "@fontsource/cormorant-garamond/300-italic.css";
+@import "@fontsource/cormorant-garamond/400.css";
+@import "@fontsource/cormorant-garamond/400-italic.css";
+@import "@fontsource/cormorant-garamond/500.css";
+@import "@fontsource/cormorant-garamond/500-italic.css";
+@import "@fontsource-variable/manrope";
+
+/*
+  MUSE design tokens. Every colour, font, size and easing on the site is named here once.
+
+  Palette (from the brief):
+    charcoal  #171816  cinematic sections, primary text on light
+    olive     #292A25  secondary dark surface
+    sand      #D5C8B5  secondary light surface
+    ivory     #F2EEE6  primary light surface, text on dark
+    bronze    #966B48  the accent: hairlines, numerals, hover fills, large type only
+  Derived for accessible text (all AA at body size on their intended grounds):
+    bronze-ink   on ivory / sand     bronze-light on charcoal / olive
+    stone        muted text on ivory / sand      mist  muted text on charcoal / olive
+*/
+@theme {
+  --font-sans: "Manrope Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Cormorant Garamond", "Times New Roman", serif;
+
+  --color-charcoal: #171816;
+  --color-olive: #292a25;
+  --color-sand: #d5c8b5;
+  --color-ivory: #f2eee6;
+  --color-bronze: #966b48;
+  --color-bronze-ink: #6e4d31;
+  --color-bronze-light: #bf9873;
+  --color-stone: #524c44;
+  --color-mist: #a39c90;
+  --color-line-dark: rgb(242 238 230 / 0.14);
+  --color-line-light: rgb(23 24 22 / 0.14);
+  --color-danger: #a23b2a;
+  --color-danger-light: #e39a8a;
+  --color-success: #4f6b3c;
+
+  /* Type scale: one fluid scale for the whole site. */
+  --text-display: clamp(3.25rem, 1.6rem + 6.4vw, 8.5rem);
+  --text-display--line-height: 0.92;
+  --text-h1: clamp(2.75rem, 1.8rem + 3.9vw, 5.5rem);
+  --text-h1--line-height: 0.98;
+  --text-h2: clamp(2.25rem, 1.6rem + 2.6vw, 4rem);
+  --text-h2--line-height: 1.04;
+  --text-h3: clamp(1.625rem, 1.35rem + 1.1vw, 2.375rem);
+  --text-h3--line-height: 1.12;
+  --text-h4: clamp(1.375rem, 1.25rem + 0.45vw, 1.625rem);
+  --text-h4--line-height: 1.2;
+  --text-lead: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem);
+  --text-lead--line-height: 1.75;
+  --text-body: 1rem;
+  --text-body--line-height: 1.8;
+  --text-small: 0.875rem;
+  --text-small--line-height: 1.7;
+  --text-label: 0.6875rem;
+  --text-label--line-height: 1.4;
+
+  /* Corner radii, scaled to the element: buttons and button-like controls, then image cards (larger, so a little
+     rounder to look equally soft). Round controls stay circular. */
+  --radius-btn: 6px;
+  --radius-card: 8px;
+  /* Picture frames: 3px bronze on every ground, a soft drop shadow; on hover a light sweep along the frame and a gentle zoom. */
+  --frame-width: 3px;
+
+  --tracking-label: 0.28em;
+  --tracking-wordmark: 0.42em;
+
+  /* Spacing rhythm, used by name so every section follows the same steps (8px base). */
+  --spacing-gutter: clamp(1.25rem, 0.6rem + 3.2vw, 4rem);
+  --spacing-section: clamp(6rem, 4rem + 8vw, 11rem);
+  --spacing-band: clamp(3.5rem, 2.5rem + 4vw, 6rem);
+
+  /* One easing for the whole site: a sophisticated ease-out, cubic-bezier(0.16, 1, 0.3, 1) (quick, noticeable start,
+     long gentle deceleration), shared with Motion in utils/motion.js. It is also Tailwind's default, so every
+     transition-* utility uses it. */
+  --ease-site: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-curtain: cubic-bezier(0.16, 1, 0.3, 1);
+  --default-transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --animate-scroll-cue: scroll-cue 2.4s var(--ease-curtain) infinite;
+  @keyframes scroll-cue {
+    0% {
+      transform: scaleY(0);
+      transform-origin: top;
+    }
+    45% {
+      transform: scaleY(1);
+      transform-origin: top;
+    }
+    55% {
+      transform: scaleY(1);
+      transform-origin: bottom;
+    }
+    100% {
+      transform: scaleY(0);
+      transform-origin: bottom;
+    }
+  }
+}
+
+/* A photograph's frame. Full-bleed background photos (heroes, closing scenes) are never framed. */
+@utility frame {
+  position: relative;
+  /* The border is transparent and painted by the background layers below, so a highlight can travel
+     along the bronze edge only. The photograph covers the inside, so the shine never crosses the image. */
+  border: var(--frame-width) solid transparent;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background-image:
+    linear-gradient(115deg, transparent 42%, rgb(255 244 222 / 0.95) 50%, transparent 58%),
+    linear-gradient(var(--color-bronze), var(--color-bronze));
+  background-origin: border-box;
+  background-clip: border-box;
+  background-repeat: no-repeat;
+  background-size:
+    250% 100%,
+    100% 100%;
+  background-position:
+    100% 0,
+    0 0;
+  box-shadow:
+    0 14px 28px -16px rgb(23 24 22 / 0.45),
+    0 3px 8px -4px rgb(23 24 22 / 0.25);
+  transition:
+    scale 1.2s var(--ease-site),
+    box-shadow 1.2s var(--ease-site);
+
+  & img {
+    transition:
+      scale 1.6s var(--ease-site),
+      opacity 1.2s var(--ease-site);
+  }
+
+  /* Hover: one sweep of light along the frame (leaving resets it instantly), the card lifts a little
+     and the photograph inside zooms a little more. Uses the CSS "scale" property so it never fights
+     the transforms Motion uses for reveals and parallax. */
+  &:hover {
+    background-position:
+      0% 0,
+      0 0;
+    transition:
+      background-position 1.6s var(--ease-site),
+      scale 1.2s var(--ease-site),
+      box-shadow 1.2s var(--ease-site);
+  }
+  @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    &:not(img):hover {
+      scale: 1.02;
+      box-shadow:
+        0 24px 40px -18px rgb(23 24 22 / 0.5),
+        0 6px 14px -6px rgb(23 24 22 / 0.3);
+    }
+    &:hover img {
+      scale: 1.06;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    &:hover {
+      transition: none;
+    }
+  }
+}
+
+/* Small uppercase label used for eyebrows, buttons, nav and captions. */
+@utility label {
+  font-family: var(--font-sans);
+  font-size: var(--text-label);
+  line-height: var(--text-label--line-height);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-ivory font-sans text-body text-charcoal antialiased;
+    font-feature-settings: "kern", "liga";
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: var(--color-bronze);
+    color: var(--color-ivory);
+  }
+
+  :focus-visible {
+    outline: 1px solid var(--color-bronze);
+    outline-offset: 4px;
+  }
+
+  img {
+    @apply max-w-full;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+@layer components {
+  /* The page grid: one container width and gutter everywhere. */
+  .shell {
+    @apply mx-auto w-full max-w-[90rem] px-gutter;
+  }
+
+  /* Display heading: light Cormorant, slightly tightened. */
+  .display {
+    @apply font-display font-light tracking-[-0.015em];
+  }
+
+  /* An italic serif statement. */
+  .statement {
+    @apply font-display font-light italic tracking-[-0.01em];
+  }
+
+  .section {
+    @apply py-section;
+  }
+
+  /* Measure for running text. */
+  .prose-measure {
+    max-width: 34rem;
+  }
+
+  /* Film grain over cinematic imagery: hides the softness of web-resolution photos and adds depth. */
+  .grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.1;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .7 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    mix-blend-mode: overlay;
+  }
+
+  /* Hairline link: a line that draws under the text on hover. */
+  .link-line {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition:
+      background-size 0.9s var(--ease-site),
+      color 0.3s var(--ease-site);
+  }
+  .link-line:hover,
+  .link-line:focus-visible,
+  .link-line[aria-current="page"] {
+    background-size: 100% 1px;
+  }
+
+  /* Form controls: underlined fields, editorial rather than boxed. */
+  .field-control {
+    @apply block w-full rounded-none border-0 border-b bg-transparent px-0 pt-2 pb-3 font-sans text-body outline-none transition-colors duration-300 ease-site;
+    -webkit-appearance: none;
+    appearance: none;
+    min-height: 2.75rem;
+  }
+  .field-control::placeholder {
+    color: currentColor;
+    opacity: 0.45;
+  }
+  select.field-control {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%23966b48' stroke-width='1.4'%3E%3Cpath d='M1 1.5l5 5 5-5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.25rem center;
+    padding-right: 1.75rem;
+  }
+  select.field-control option {
+    color: var(--color-charcoal);
+    background: var(--color-ivory);
+  }
+  .field-control::-webkit-calendar-picker-indicator {
+    opacity: 0.55;
+    cursor: pointer;
+  }
+  .on-dark .field-control::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+  }
+  .on-dark .field-control {
+    color-scheme: dark;
+  }
+
+  /* Range slider (music player volume). */
+  .range {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 1px;
+    background: linear-gradient(to right, var(--color-bronze-light) var(--fill, 50%), rgb(242 238 230 / 0.2) var(--fill, 50%));
+    cursor: pointer;
+  }
+  .range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 11px;
+    height: 11px;
+    border-radius: 999px;
+    background: var(--color-ivory);
+  }
+  .range::-moz-range-thumb {
+    width: 11px;
+    height: 11px;
+    border: 0;
+    border-radius: 999px;
+    background: var(--color-ivory);
+  }
+
+  /* Hide the scrollbar on horizontal strips (they still scroll and are keyboard reachable). */
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Buttons. A fill rises from the bottom edge on hover: the site's one signature interaction. */
+@layer components {
+  .btn {
+    @apply label relative isolate inline-flex min-h-[3.25rem] items-center justify-center gap-3 overflow-hidden rounded-btn border px-7 text-center whitespace-nowrap;
+    transition:
+      color 0.5s var(--ease-site),
+      border-color 0.5s var(--ease-site),
+      scale 0.9s var(--ease-site);
+  }
+  /* Hover: the button zooms in a little as the fill rises (mouse/trackpad only, so taps never stick). */
+  @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    .btn:not(:disabled):hover {
+      scale: 1.04;
+    }
+  }
+  .btn:not(:disabled):focus-visible {
+    scale: 1.04;
+  }
+  .btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--btn-fill);
+    transform: translateY(101%);
+    transition: transform 0.9s var(--ease-curtain);
+  }
+  .btn:hover::before,
+  .btn:focus-visible::before {
+    transform: translateY(0);
+  }
+  .btn:disabled {
+    @apply cursor-not-allowed opacity-60;
+  }
+  .btn-sm {
+    @apply min-h-11 px-5;
+  }
+
+  /* On dark grounds */
+  .btn-ivory {
+    @apply border-ivory bg-ivory text-charcoal hover:border-bronze-light focus-visible:border-bronze-light;
+    --btn-fill: var(--color-bronze-light);
+  }
+  .btn-ghost-light {
+    @apply border-ivory/45 text-ivory hover:border-ivory hover:text-charcoal focus-visible:text-charcoal;
+    --btn-fill: var(--color-ivory);
+  }
+  /* On light grounds */
+  .btn-charcoal {
+    @apply border-charcoal bg-charcoal text-ivory hover:border-bronze-ink focus-visible:border-bronze-ink;
+    --btn-fill: var(--color-bronze-ink);
+  }
+  .btn-ghost-dark {
+    @apply border-charcoal/35 text-charcoal hover:border-charcoal hover:text-ivory focus-visible:text-ivory;
+    --btn-fill: var(--color-charcoal);
+  }
+
+  /* Text link with a short rule that extends on hover. */
+  .text-link {
+    @apply label inline-flex min-h-11 items-center gap-4;
+  }
+  .text-link .rule {
+    @apply block h-px w-8 bg-current transition-[width] duration-500 ease-site;
+  }
+  .text-link:hover .rule,
+  .text-link:focus-visible .rule {
+    @apply w-14;
+  }
+}
