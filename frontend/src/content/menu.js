@@ -3,13 +3,14 @@
 // When the season changes: update `season`, replace the dishes below, and swap the PDF in public/menus.
 // Never invent dishes or prices. Prices are in Rand.
 //   diet: 'V' = vegetarian, 'VG' = vegan (as marked on the printed menu)
+import { asset } from '../utils/asset';
 
 export const season = 'Winter 2026';
 
 export const downloads = [
-  { id: 'seasonal', label: 'Seasonal menu', detail: `${season} · PDF · 136 KB`, href: '/menus/muse-seasonal-menu-winter-2026.pdf' },
-  { id: 'drinks', label: 'Drinks menu', detail: '2026 · PDF · 121 KB', href: '/menus/muse-drinks-menu-2026.pdf' },
-  { id: 'wine', label: 'Wine list', detail: '2026 · PDF · 570 KB', href: '/menus/muse-wine-list-2026.pdf' },
+  { id: 'seasonal', label: 'Seasonal menu', detail: `${season} · PDF · 136 KB`, href: asset('menus/muse-seasonal-menu-winter-2026.pdf') },
+  { id: 'drinks', label: 'Drinks menu', detail: '2026 · PDF · 121 KB', href: asset('menus/muse-drinks-menu-2026.pdf') },
+  { id: 'wine', label: 'Wine list', detail: '2026 · PDF · 570 KB', href: asset('menus/muse-wine-list-2026.pdf') },
 ];
 
 export const dietLabels = { V: 'Vegetarian', VG: 'Vegan' };

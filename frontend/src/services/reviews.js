@@ -1,4 +1,11 @@
 import api from './api';
+import { BASE, IS_PREVIEW } from '../utils/asset';
 
-// Google rating and review count, maintained by the backend (live from Google, or the configured values).
-export const getReviewSummary = () => api.get('/reviews/summary').then((r) => r.data.data);
+// The GitHub Pages preview has no API: its build saves the same summary as a file (scripts/snapshot-preview-data.js).
+export const getReviewSummary = () =>
+  IS_PREVIEW
+    ? fetch(`${BASE}preview-data/reviews-summary.json`).then((r) => {
+        if (!r.ok) throw new Error('Reviews unavailable');
+        return r.json();
+      })
+    : api.get('/reviews/summary').then((r) => r.data.data);

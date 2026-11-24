@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import Loader from './Loader';
 import { easyEase } from '../../utils/motion';
+import { asset } from '../../utils/asset';
 
 // The page-load intro: the MUSE logo animation (public/intro/muse-intro.mp4, exported from After Effects as Logo.mp4)
 // plays full screen, then dissolves into the page. The page is revealed as the dissolve starts, so the hero animates
@@ -16,7 +17,7 @@ import { easyEase } from '../../utils/motion';
 // instead of a copy it cached earlier (the file names stay the same).
 const INTRO_VERSION = '2026-11-20';
 const pickSource = () =>
-  `${typeof window !== 'undefined' && window.matchMedia('(min-width: 1281px)').matches ? '/intro/muse-intro.mp4' : '/intro/muse-intro-1080.mp4'}?v=${INTRO_VERSION}`;
+  `${typeof window !== 'undefined' && window.matchMedia('(min-width: 1281px)').matches ? asset('intro/muse-intro.mp4') : asset('intro/muse-intro-1080.mp4')}?v=${INTRO_VERSION}`;
 export const INTRO_SOURCES = [{ src: pickSource(), type: 'video/mp4' }];
 const SAFETY_CAP_MS = 14000;
 
